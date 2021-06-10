@@ -39,4 +39,4 @@ outputArtifacts:
     location: multisrc1.txt
   - name: multisrc2-from-multisrc1
     type: BINARY
-    location: multisrc2_1.0.tar
+    location: $OCI_multisrc2_WORKING_DIR/multisrc2_1.0.tar
