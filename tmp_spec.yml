@@ -7,7 +7,6 @@ env:
   variables:
     "testEnv" : "Hello Bala, This is a test variable!!!"
     "GRADLE_HOME": "${PATH}"
-    "PATH": "${PATH}"
 
 steps:
   - type: Command
