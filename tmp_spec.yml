@@ -24,8 +24,9 @@ steps:
       #echo "Gradle Home is ${GRADLE_HOME}" >> kafka.txt
       #export PATH=${GRADLE_HOME}:${PATH}
       date >> kafka.txt
+      ls /tmp >> kafka.txt 2>&1
       cd ${OCI_multisrc2_PROJECT_DIR}
-      ./gradlew srcJar >> kafka.txt 2>&1
+      #./gradlew srcJar >> kafka.txt 2>&1
 
 outputArtifacts:
   - name: kafka
