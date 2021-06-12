@@ -19,13 +19,13 @@ steps:
       #export PATH=${GRADLE_HOME}/bin:${PATH}
       #echo "PATH is ${PATH}" >> kafka.txt
   - type: Command
-    name: "date"
+    name: "kafka Build"
     command: |
       #echo "Gradle Home is ${GRADLE_HOME}" >> kafka.txt
       #export PATH=${GRADLE_HOME}:${PATH}
       date >> kafka.txt
       cd ${OCI_multisrc2_PROJECT_DIR}
-      ./gradlew javadoc > kafka.txt 2>&1
+      ./gradlew srcJar > kafka.txt 2>&1
 
 outputArtifacts:
   - name: kafka
