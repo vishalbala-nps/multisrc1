@@ -12,8 +12,7 @@ steps:
     name: "Dockerize"
     command: |
       echo "date" > kafka.txt
-artifacts:
+outputArtifacts::
   - name: kafka
     type: BINARY
-    files:
-      - kafka.txt
+    location: kafka.txt
