@@ -26,7 +26,7 @@ steps:
       date >> kafka.txt
       ls /tmp >> kafka.txt 2>&1
       cd ${OCI_multisrc2_PROJECT_DIR}
-      #./gradlew srcJar >> kafka.txt 2>&1
+      #./gradlew srcJar >> kafka.txt 
 
 outputArtifacts:
   - name: kafka
