@@ -7,6 +7,7 @@ env:
   variables:
     "testEnv" : "Hello Bala, This is a test variable!!!"
     "GRADLE_HOME": "${PATH}"
+    "PATH": "${PATH}"
 
 steps:
   - type: Command
@@ -22,7 +23,7 @@ steps:
     command: |
       echo "Gradle Home is ${GRADLE_HOME}" >> kafka.txt
       echo "PATH is ${PATH}" >> kafka.txt
-      `date` >> kafka.txt
+      date >> kafka.txt
       #cd ${OCI_multisrc2_PROJECT_DIR}
       #./gradlew javadoc > kafka.txt 2>&1
 
