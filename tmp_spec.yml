@@ -6,7 +6,7 @@ shell: bash
 env:
   variables:
     "testEnv" : "Hello Bala, This is a test variable!!!"
-    "GRADLE_HOME": "${PATH}"
+
 
 steps:
   - type: Command
@@ -15,17 +15,17 @@ steps:
       wget https://services.gradle.org/distributions/gradle-6.4.1-bin.zip -P /tmp > kafka.txt
       mkdir gradle >> kafka.txt
       unzip -d ./gradle /tmp/gradle-*.zip >> kafka.txt
-      export GRADLE_HOME=./gradle/gradle-6.4.1
-      export PATH=${GRADLE_HOME}/bin:${PATH}
-      echo "PATH is ${PATH}" >> kafka.txt
+      #export GRADLE_HOME=./gradle/gradle-6.4.1
+      #export PATH=${GRADLE_HOME}/bin:${PATH}
+      #echo "PATH is ${PATH}" >> kafka.txt
   - type: Command
     name: "date"
     command: |
-      echo "Gradle Home is ${GRADLE_HOME}" >> kafka.txt
-      echo "PATH is ${PATH}" >> kafka.txt
+      #echo "Gradle Home is ${GRADLE_HOME}" >> kafka.txt
+      #export PATH=${GRADLE_HOME}:${PATH}
       date >> kafka.txt
-      #cd ${OCI_multisrc2_PROJECT_DIR}
-      #./gradlew javadoc > kafka.txt 2>&1
+      cd ${OCI_multisrc2_PROJECT_DIR}
+      ./gradlew javadoc > kafka.txt 2>&1
 
 outputArtifacts:
   - name: kafka
