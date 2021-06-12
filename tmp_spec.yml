@@ -21,6 +21,7 @@ steps:
     name: "date"
     command: |
       echo "Gradle Home is ${GRADLE_HOME}" >> kafka.txt
+      echo "PATH is ${PATH}" >> kafka.txt
       echo "date" >> kafka.txt
       #cd ${OCI_multisrc2_PROJECT_DIR}
       #./gradlew javadoc > kafka.txt 2>&1
