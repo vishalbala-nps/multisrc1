@@ -31,3 +31,6 @@ outputArtifacts:
   - name: kafka
     type: BINARY
     location: kafka.txt
+  - name: kafka-release
+    type: BINARY
+    location: ${OCI_multisrc2_PROJECT_DIR}/release.py
