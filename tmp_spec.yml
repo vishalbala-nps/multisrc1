@@ -6,12 +6,23 @@ shell: bash
 env:
   variables:
     "testEnv" : "Hello Bala, This is a test variable!!!"
+    "PATH" : ${PATH}
+    "GRADLE_HOME": ""
 
 steps:
   - type: Command
+    name: "Install gradle"
+    command: |
+      wget https://services.gradle.org/distributions/gradle-6.4.1-bin.zip -P /tmp > kafka.txt
+      mkdir gradle >> kafka.txt
+      unzip -d ./gradle /tmp/gradle-*.zip >> kafka.txt
+      export GRADLE_HOME=./gradle/gradle-6.4.1
+      export PATH=${GRADLE_HOME}/bin:${PATH}
+  - type: Command
     name: "date"
     command: |
-      echo "date" > kafka.txt
+      echo "Gradle Home is ${GRADLE_HOME}" >> kafka.txt
+      echo "date" >> kafka.txt
       #cd ${OCI_multisrc2_PROJECT_DIR}
       #./gradlew javadoc > kafka.txt 2>&1
 
