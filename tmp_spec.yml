@@ -31,7 +31,7 @@ steps:
 outputArtifacts:
   - name: kafka
     type: BINARY
-    location: abc.txt
+    location: ${OCI_multisrc2_PROJECT_DIR}/abc.txt
   - name: kafka-release
     type: BINARY
     location: ${OCI_multisrc2_PROJECT_DIR}/release.py
