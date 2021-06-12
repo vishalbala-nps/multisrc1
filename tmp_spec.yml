@@ -17,6 +17,7 @@ steps:
       unzip -d ./gradle /tmp/gradle-*.zip >> kafka.txt
       export GRADLE_HOME=./gradle/gradle-6.4.1
       export PATH=${GRADLE_HOME}/bin:${PATH}
+      echo "PATH is ${PATH}" >> kafka.txt
   - type: Command
     name: "date"
     command: |
