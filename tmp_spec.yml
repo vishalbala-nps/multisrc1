@@ -24,14 +24,14 @@ steps:
       #echo "Gradle Home is ${GRADLE_HOME}" >> kafka.txt
       #export PATH=${GRADLE_HOME}:${PATH}
       date >> kafka.txt
-      ls /tmp >> kafka.txt 2>&1
       cd ${OCI_multisrc2_PROJECT_DIR}
-      ./gradlew srcJar >> kafka.txt
+      ./gradlew jar >> kafka.txt
+      ./gradlew uniTest >> kafka.txt
 
 outputArtifacts:
   - name: kafka
     type: BINARY
-    location: ${OCI_multisrc2_PROJECT_DIR}/abc.txt
+    location: ${OCI_multisrc2_PROJECT_DIR}/kafka.txt
   - name: kafka-release
     type: BINARY
     location: ${OCI_multisrc2_PROJECT_DIR}/release.py
