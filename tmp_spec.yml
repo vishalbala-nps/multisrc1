@@ -14,6 +14,7 @@ steps:
       echo "date" > kafka.txt
       cd ${OCI_multisrc2_PROJECT_DIR}
       ./gradlew javadoc > kafka.txt 2>&1
+
 outputArtifacts::
   - name: kafka
     type: BINARY
