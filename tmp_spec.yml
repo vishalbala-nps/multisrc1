@@ -15,7 +15,7 @@ steps:
       cd ${OCI_multisrc2_PROJECT_DIR}
       ./gradlew javadoc > kafka.txt 2>&1
 
-outputArtifacts::
+outputArtifacts:
   - name: kafka
     type: BINARY
     location: kafka.txt
