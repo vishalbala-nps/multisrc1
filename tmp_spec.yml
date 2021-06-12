@@ -6,32 +6,14 @@ shell: bash
 env:
   variables:
     "testEnv" : "Hello Bala, This is a test variable!!!"
-    "container_ip" : "1.1.1.1"
 
 steps:
   - type: Command
     name: "Dockerize"
     command: |
-      docker build . --tag docktest:1.0
-  - type: Command
-    name: "Run the app Locally"
-    command: |
-      docker run -d -p 5000:5000 --name docktest docktest:1.0
-  - type: Command
-    name: "Test the app Locally"
-    command: |
-      curl --version > docktest-result.txt
-      container_ip=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' docktest)
-      echo "echo Container IP: $container_ip" >> docktest-result.txt
-      sleep 10
-      curl localhost:5000 >> docktest-result.txt
-  - type: Command
-    name: "Shutdown the app"
-    command: |
-      docker stop docktest >> docktest-result.txt
-      docker rm docktest >> docktest-result.txt
+      echo "date" > kafka.txt
 artifacts:
-  - name: docktest-result
+  - name: kafka
     type: BINARY
     files:
-      - docktest-result.txt
+      - kafka.txt
