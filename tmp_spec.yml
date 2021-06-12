@@ -6,7 +6,6 @@ shell: bash
 env:
   variables:
     "testEnv" : "Hello Bala, This is a test variable!!!"
-    "PATH" : ${PATH}
     "GRADLE_HOME": ""
 
 steps:
