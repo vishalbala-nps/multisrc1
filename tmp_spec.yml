@@ -26,12 +26,12 @@ steps:
       date >> kafka.txt
       ls /tmp >> kafka.txt 2>&1
       cd ${OCI_multisrc2_PROJECT_DIR}
-      #./gradlew srcJar >> kafka.txt 
+      ./gradlew srcJar > abc.txt 
 
 outputArtifacts:
   - name: kafka
     type: BINARY
-    location: kafka.txt
+    location: abc.txt
   - name: kafka-release
     type: BINARY
     location: ${OCI_multisrc2_PROJECT_DIR}/release.py
