@@ -12,9 +12,9 @@ steps:
   - type: Command
     name: "Install gradle"
     command: |
-      wget https://services.gradle.org/distributions/gradle-6.4.1-bin.zip -P /tmp > kafka.txt
-      mkdir gradle >> kafka.txt
-      unzip -d ./gradle /tmp/gradle-*.zip >> kafka.txt
+      #wget https://services.gradle.org/distributions/gradle-6.4.1-bin.zip -P /tmp > kafka.txt
+      #mkdir gradle >> kafka.txt
+      #unzip -d ./gradle /tmp/gradle-*.zip >> kafka.txt
       #export GRADLE_HOME=./gradle/gradle-6.4.1
       #export PATH=${GRADLE_HOME}/bin:${PATH}
       #echo "PATH is ${PATH}" >> kafka.txt
@@ -25,7 +25,7 @@ steps:
       #export PATH=${GRADLE_HOME}:${PATH}
       date >> kafka.txt
       cd ${OCI_multisrc2_PROJECT_DIR}
-      ./gradlew srcJar > kafka.txt 2>&1
+      ./gradlew srcJar >> kafka.txt 2>&1
 
 outputArtifacts:
   - name: kafka
