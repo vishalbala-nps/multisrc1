@@ -38,6 +38,6 @@ outputArtifacts:
   - name: multisrc1
     type: BINARY
     location: multisrc1.txt
-  - name: multisrc2-from-multisrc1
+  - name: multisrc2_from_multisrc1
     type: BINARY
     location: ${OCI_multisrc2_PROJECT_DIR}/multisrc2_1.0.tar
