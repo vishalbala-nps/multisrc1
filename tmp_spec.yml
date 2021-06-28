@@ -24,11 +24,11 @@ steps:
       #echo "Gradle Home is ${GRADLE_HOME}" >> kafka.txt
       #export PATH=${GRADLE_HOME}:${PATH}
       date >> kafka.txt
-      cd ${OCI_multisrc2_PROJECT_DIR}
+      cd ${OCI_WORKSPACE_DIR}/multisrc2
       time ./gradlew jar >> kafka.txt
 
 outputArtifacts:
 
   - name: kafka
     type: BINARY
-    location: ${OCI_multisrc2_PROJECT_DIR}/kafka.txt
+    location: ${OCI_WORKSPACE_DIR}/multisrc2/kafka.txt
