@@ -26,6 +26,7 @@ steps:
       date >> kafka.txt
       cd ${OCI_WORKSPACE_DIR}/multisrc2
       time ./gradlew jar >> kafka.txt
+      tail kafka.txt
 
 outputArtifacts:
 
