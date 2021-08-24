@@ -25,8 +25,9 @@ steps:
       #export PATH=${GRADLE_HOME}:${PATH}
       date >> kafka.txt
       cd ${OCI_WORKSPACE_DIR}/multisrc2
-      #time ./gradlew jar >> kafka.txt
-      ./gradlew jar
+      #./gradlew jar
+      time ./gradlew jar >> kafka.txt
+      
       
 
 outputArtifacts:
