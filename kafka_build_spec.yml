@@ -1,0 +1,21 @@
+version: 0.1
+component: build
+timeoutInSeconds: 20000
+runAs: root
+shell: bash
+
+steps:
+
+  - type: Command
+    name: "kafka Build"
+    command: |
+      date >> ${OCI_WORKSPACE_DIR}/src1/kafka.txt
+      cd ${OCI_WORKSPACE_DIR}/src2
+      ./gradlew jar >> ${OCI_WORKSPACE_DIR}/src1/kafka.txt
+      
+
+outputArtifacts:
+
+  - name: kafka
+    type: BINARY
+    location: kafka.txt
