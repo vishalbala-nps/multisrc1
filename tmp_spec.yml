@@ -9,24 +9,14 @@ env:
 
 
 steps:
-  - type: Command
-    name: "Install gradle"
-    command: |
-      #wget https://services.gradle.org/distributions/gradle-6.4.1-bin.zip -P /tmp > kafka.txt
-      #mkdir gradle >> kafka.txt
-      #unzip -d ./gradle /tmp/gradle-*.zip >> kafka.txt
-      #export GRADLE_HOME=./gradle/gradle-6.4.1
-      #export PATH=${GRADLE_HOME}/bin:${PATH}
-      #echo "PATH is ${PATH}" >> kafka.txt
+
   - type: Command
     name: "kafka Build"
     command: |
-      #echo "Gradle Home is ${GRADLE_HOME}" >> kafka.txt
-      #export PATH=${GRADLE_HOME}:${PATH}
-      date >> kafka.txt
+      date >> ${OCI_WORKSPACE_DIR}/multisrc1/kafka.txt
       cd ${OCI_WORKSPACE_DIR}/multisrc2
       #./gradlew jar
-      #time ./gradlew jar >> kafka.txt
+      #time ./gradlew jar >> ${OCI_WORKSPACE_DIR}/multisrc1/kafka.txt
       time ./gradlew -q jar
       
 
@@ -34,4 +24,4 @@ outputArtifacts:
 
   - name: kafka
     type: BINARY
-    location: ${OCI_WORKSPACE_DIR}/multisrc2/kafka.txt
+    location: kafka.txt
