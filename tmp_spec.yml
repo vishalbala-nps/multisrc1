@@ -13,11 +13,11 @@ steps:
   - type: Command
     name: "kafka Build"
     command: |
-      date >> ${OCI_WORKSPACE_DIR}/multisrc1/kafka.txt
+      date >> kafka.txt
       cd ${OCI_WORKSPACE_DIR}/multisrc2
       #./gradlew jar
       #time ./gradlew jar >> ${OCI_WORKSPACE_DIR}/multisrc1/kafka.txt
-      time ./gradlew -q jar
+      ./gradlew  jar
       
 
 outputArtifacts:
